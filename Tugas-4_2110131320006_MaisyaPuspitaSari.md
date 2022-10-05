@@ -25,3 +25,46 @@ _____
 <p align = "justify">Teknik ini dikenal sebagai Dithering. Ini digunakan dalam grafik komputer untuk menciptakan ilusi warna tambahan pada tampilan warna atau printer. Tidak seperti patherning, dithering membuat gambar keluaran dengan jumlah titik yang sama dengan jumlah piksel pada gambar sumber. Dithering dapat dianggap sebagai thresholding gambar sumber dengan matriks gentar. Matriks diletakkan berulang kali di atas gambar sumber. Dimanapun nilai piksel gambar lebih besar dari nilai dalam matriks, titik pada gambar output diisi. Masalah dithering yang terkenal adalah menghasilkan artefak pola yang diperkenalkan oleh matriks ambang batas tetap. Gambar 4.5 menunjukkan contoh operasi dithering.</p>
 
 <p align = "center"><img src = "Ditherning.png"></p>
+
+___________
+## Tambbahan Tugas Baru
+1. Mengapa dittering dengan ukuran pixel lebih besar lebih bagus dibandingkan dithering dengan ukuran pixel lebih kecil?
+
+Pembahasan : 
+Dalam citra terdapat beberapa aspek yang mempengaruhi kualitas citra, yaitu;
+* Resolusi (pixel)
+* Pewarna (color)
+* Kontras (gelap/terang)
+* Tepian objek (edge enhaschment)
+* Ketajaman / Sharpen
+* Warna semu (pseudocolor)
+* Derau (noise)
+
+Citra yang dihasilkan dari pola dithering dengan ukuran matriks yang lebih kecil juga memiliki pola halftone yang kurang dibandingkan citra yang diproses menggunakan dithering dengan pola yang lebih besar. Hal ini disebabkan citra dengan ukuran pixel yang lebih keci memiliki lebih sedikit pola halftone (kebanyakannya memiliki pola hampir sama) dibandingkan dengan citra yang diolah dengan metode halftone yang memiliki ukuran pixel lebih besar memiliki banyak pola (beragam) pola dithering.
+
+2. Menentukan pola dengan metode dithering
+
+dalam proses dithering blok asli pada citra kemudian akan diganti dengan jenis pola biner tersebut
+<p align = "center"><img src = "Screenshot (10).png"></p>
+
+Ordered dithering dilakukan  dengan  membandingkan  tiap  blok  dari  citra  asli dengan sebuah matriks  pembatas  yang  disebut  dengan matriksdither.Masing-masing elemen  dari  blok  asli  dikuantisasi  sesuai  dengan  nilai  batas  pada  pola dither.  Nilai-nilai pada matriks ditheradalah tetap, tetapi bisa bervariasisesuai dengan jenis citra. Matriksditherpertamayang digunakan dalam metode ini adalah:
+
+A = [0 128
+    192 64 ]
+
+Matriks  tersebut  diulang  sampai  mencakup  seluruh  matriks  pada  citra  yang  diolah. Katakanlah  d(i,j)  adalah  matriks  yang  diperoleh  dari  mereplika  A  dan  x(i,j)  adalah  citra abu-abu asli. Piksel untuk citra yang dihasilkan p(i,j) didefenisikan sebagai berikut:
+
+p(i,j) = {255   if(i,j)>d(i,j)
+          0  if x(i,j)< d(i,j)}
+
+Hasil  konversi  citra  abu-abu
+<p align = "center"><img src = "Screenshot (11).png"></p>
+
+Selain matriks 2x2, teknik ini juga memiliki matriks dithering yang lainnya,yaitu 4x4 sebagai berikut:
+B = [0  128 32  160
+    192 64  224 96
+    48  176 16  144
+    240 112 208 80]
+
+citra yang dihasilkan dari penggunaan ordered ditheringmatriks 4x4:
+<p align = "center"><img src = "Screenshot (12).png"></p>
