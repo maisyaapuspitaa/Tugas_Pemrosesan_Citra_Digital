@@ -1,0 +1,11 @@
+pkg load image;
+clc;
+clear all;
+kernel = [-1 0 -1; 0 4 0; -1 0 -1];
+gambar = imread("perempuan.jpg");
+tresh = graythresh(gambar);
+imbw = im2bw(gambar, tresh);
+konvolusiGambar = conv2(double(imbw),kernel,"valid");
+figure(2);
+subplot(2,2,1);imshow(gambar);title("Citra Asli");
+subplot(2,2,2);imshow(konvolusiGambar);title("Citra Setelah di Konvolusi");
