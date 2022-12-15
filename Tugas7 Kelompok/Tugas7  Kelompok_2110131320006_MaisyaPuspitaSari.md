@@ -1,3 +1,9 @@
+Kelompok 7
+<p> Maisya Puspita Sari        [2110131320006]</p>
+<p> Putri Tari Lestari         [2110131120002]></p>
+<p> M. Gymnastiar              [2110131210004]</p>
+________________________________________________
+
 <p><img src="img/Picture3.png" >
 
 <p><img src="img/Picture1.png" width="300">
