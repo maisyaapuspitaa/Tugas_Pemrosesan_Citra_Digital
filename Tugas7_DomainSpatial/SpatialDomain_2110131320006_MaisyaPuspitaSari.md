@@ -1,7 +1,6 @@
 NIM : 21101313200006 <br>
 Nama : Maisya Puspita Sari <br>
 <h2> Tugas Spatial Domain dan Frequency Domain</h2>
-________________________________________________________________
 
 
 
